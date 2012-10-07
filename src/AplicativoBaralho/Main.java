@@ -22,6 +22,13 @@ package AplicativoBaralho;
 
 import java.util.Scanner;
 
+/**
+ *Classe que representa a manipulacao das cartas pelo jogador
+ *Funcoes possiveis: mostrar baralho, embaralhar, cortar em duas partes, retirar uma carta do inicio ou do final,
+ *passar uma carta do inicio para o final, adicionar carta ao monte de descarte.
+ *@author Jader de Freitas Saldanha
+ */
+
 public class Main {
 	
 	public static Baralho baralho = new Baralho();
@@ -30,6 +37,9 @@ public class Main {
     public static int option = 100;
     public static int localdocorte = 0;
     
+   /* Método com o qual o usuário pode escolher a opção da qual poderá manipular o baralho de cartas
+   * 
+   */ 
    public static void ManipulaCartas(){ 
 	   
 	   Scanner is = new Scanner(System.in);
