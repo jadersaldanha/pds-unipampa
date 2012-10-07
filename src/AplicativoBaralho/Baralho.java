@@ -21,11 +21,18 @@ package AplicativoBaralho;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * Classe principal que manipula as funções principais de manipulação do baralho de cartas
+ * **/
+ * 
 public class Baralho {
 
 	public ArrayList<Cartas> baralho = new ArrayList<Cartas>(52);
 	public ArrayList<Cartas> descartadas = new ArrayList<Cartas>();	 
 
+	/**
+	 * Método construtor que cria um arraylist do qual representará o baralho de cartas
+	 * **/
 	public Baralho(){
 		 ArrayList<String> naipes = new ArrayList<String>();
 		 naipes.add("Copas");
@@ -39,18 +46,31 @@ public class Baralho {
 	            }
 	        }
 	}	     	     
-
+	/**
+	 * Método que apenas imprime o baralho, faz a chamada a função que imprime o naipe e o numero da carta
+	 * **/
 	public void imprimeBaralho() {
 		for (int count=0; count<baralho.size(); count++){
 			System.out.println(baralho.get(count).imprimecarta());
         }
-    }	
+    }
+    /**
+     * Método que embaralha o baralho fazendo uso do método shuffle
+     * Exibe uma mensagem do qual descreve se o baralho foi embaralhado com sucesso
+     * 
+     * */
     public void embaralhaBaralho(){
         Collections.shuffle(baralho);
         System.out.println("Embaralhado com sucesso.");
    }
 
-    public void cortaEmDois(int posicao) {
+  
+  /**
+  * Método que corta o baralho em dois baseado em uma posição que o usuário desejar.
+  * Cria um array temporário para armazenar as metades do baralho e depois as adiciona em outro baralho
+  * com o devido corte
+  */
+  public void cortaEmDois(int posicao) {
         if(baralho.size()<posicao){
             System.err.println("Voc� digitou um n�mero maior que o n�mero de cartas existente");
         }
@@ -65,20 +85,34 @@ public class Baralho {
         }
     }		
 
+	 /**
+	 * Método que remove do inicio do baralho uma carta e coloca-a no fim do mesmo
+	 */
 	public void moveCartaParaOFim(){
 			baralho.add(baralho.remove(0));
 			System.out.println("A carta foi movida para o fim.");
 	}
 
+ 	/**
+	 * Método que remove do inicio do baralho uma carta
+	 */
 	 public Cartas retiraCartaInicio(){
 	        return this.baralho.get(0);
 	 }
 
+	 /**
+	 * Método que remove do fim do baralho uma carta
+	 */
 	 public Cartas retiraCartaFim(){
 	       return this.baralho.get(baralho.size()-1);
 	 }		  
 
-	 public void Descarta(int numero, String naipe){
+
+/*
+* Método que faz o descarte de uma carta do baralho, baseia-se no numero e no naipe.
+* Adiciona a carta descartada ao monte de descarte, exibe uma mensagem sinalizando qual carta foi descartada.
+*/	
+public void Descarta(int numero, String naipe){
 	    	for (int i=0; i<baralho.size(); i++){
 	    		if (baralho.contains(numero) && baralho.contains(naipe)) {
 	    			descartadas.add(baralho.get(i));
@@ -88,6 +122,9 @@ public class Baralho {
 	    	}		        
 	  }
 
+	/*
+	 * Método que imprime as cartas do monte de descarte, chama o método imprimecarta para imprimir o naipe e numero da carta
+	 */	
 	 public void verCartasDescartadas() {
 		  for(int i=0; i<descartadas.size(); i++)
 			  System.out.println("Carta: " + descartadas.get(i).imprimecarta());
