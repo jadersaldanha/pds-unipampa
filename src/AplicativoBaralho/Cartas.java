@@ -23,19 +23,31 @@ public class Cartas {
 	private int numCarta;
     private String naipeCarta;
 
+    /*
+    * Método contrutor que seta o numero e o naipe da carta
+    */	
     public Cartas(int numero, String naipe){    	
     	this.numCarta = numero;
     	this.naipeCarta = naipe;
     }
 
+    /*
+    * Método que retorna o número de uma carta
+    */	
     public int getNumCarta(){
         return numCarta;
     }
 
+    /*
+    * Método que o naipe de uma carta
+    */	
     public String getNaipeCarta(){
         return naipeCarta;
     }
 
+    /*
+    * Método que faz a impressão de uma carta, com seu respectivo número e naipe
+    */	
     public String imprimecarta(){
         return this.getNumCarta() + " de " + this.getNaipeCarta();
     }
