@@ -8,3 +8,6 @@ A biblioteca disponibiliza as seguintes funcionalidades ao usuário:
 - retirar carta do fim do baralho;
 - mover uma carta, definida pelo usuário, do baralho para o monte de descarte;
 - visualizar todas as cartas do monte de descarte
+- 
+- 
+- Para a construção da biblioteca utiliza-se o Apache Ant. Comando para ser usado no terminal: ant
